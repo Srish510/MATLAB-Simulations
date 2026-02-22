@@ -13,7 +13,7 @@ curve = @(s) [ zeros(length(s),1), ...
 lambda_fun = @(s) 1e-9*(1 + 0*s);
 
 %Field 
-[Ex,Ey,Ez] = Efield_1D(obs, curve, lambda_fun);
+[Ex,Ey,Ez] = Efield_1D(obs, curve, lambda_fun, 0, 200);
 
 Ex = reshape(Ex, size(x));
 Ey = reshape(Ey, size(y));
@@ -71,4 +71,5 @@ axis equal;
 title('Electric Field of St. Line (Actual)');
 xlabel('X');
 ylabel('Y');
+
 zlabel('Z');
